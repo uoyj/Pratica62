@@ -1,4 +1,5 @@
 
+import java.util.Collections;
 import java.util.List;
 import utfpr.ct.dainf.if62c.pratica.Jogador;
 import utfpr.ct.dainf.if62c.pratica.JogadorComparator;
@@ -19,7 +20,7 @@ public class Pratica62 {
         
         
         time1.addJogador("Lateral", new Jogador(4, "Ciclano"));
-        time1.addJogador("Goleiro", new Jogador(1, "Fulano"));
+        time1.addJogador("Goleiro", new Jogador(1, "Olar"));
         time1.addJogador("Atacante", new Jogador(10, "Beltrano"));
 
         time2.addJogador("Atacante", new Jogador(15, "Mário"));
@@ -32,7 +33,7 @@ public class Pratica62 {
             Jogador j1 = time1.getJogadores().get(posicao);
             Jogador j2 = time2.getJogadores().get(posicao);
             System.out.println(String.format(format, posicao, j1, j2));
-        }
+        }        
         
         List<Jogador> lista = time1.ordena(new JogadorComparator(true, true, false));
         
@@ -41,6 +42,7 @@ public class Pratica62 {
             System.out.println(j.toString());
         }
             
+        System.out.println(Collections.binarySearch(lista, new Jogador(1, "Fulano")));
         
     }
         
